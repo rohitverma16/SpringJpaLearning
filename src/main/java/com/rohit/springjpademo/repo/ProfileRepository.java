@@ -1,4 +1,4 @@
-package com.rohit.springjpademo.repo.onetoone;
+package com.rohit.springjpademo.repo;
 
 import com.rohit.springjpademo.entity.onetoone.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;

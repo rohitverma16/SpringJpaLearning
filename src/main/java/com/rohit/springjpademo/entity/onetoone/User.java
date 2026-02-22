@@ -1,6 +1,9 @@
 package com.rohit.springjpademo.entity.onetoone;
 
+import com.rohit.springjpademo.entity.onetomany.Family;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -16,15 +19,9 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
 
-    public User() {
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Family> families;
 
-    public User(Long id, String username, Boolean status, Profile profile) {
-        this.id = id;
-        this.username = username;
-        this.status = status;
-        this.profile = profile;
-    }
 
     public Long getId() {
         return id;
@@ -56,5 +53,13 @@ public class User {
 
     public void setProfile(Profile profile) {
         this.profile = profile;
+    }
+
+    public List<Family> getFamilies() {
+        return families;
+    }
+
+    public void setFamilies(List<Family> families) {
+        this.families = families;
     }
 }

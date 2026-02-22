@@ -1,7 +1,7 @@
 package com.rohit.springjpademo.service;
 
-import com.rohit.springjpademo.dto.ProductRequestDto;
-import com.rohit.springjpademo.dto.ProductResponseDto;
+import com.rohit.springjpademo.dto.product.ProductRequestDto;
+import com.rohit.springjpademo.dto.product.ProductResponseDto;
 import com.rohit.springjpademo.entity.Product;
 import com.rohit.springjpademo.mapper.ProductMapper;
 import com.rohit.springjpademo.repo.ProductRepository;

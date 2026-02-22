@@ -1,12 +1,12 @@
 package com.rohit.springjpademo.service;
 
-import com.rohit.springjpademo.dto.ProfileRequestDto;
-import com.rohit.springjpademo.dto.ProfileUserResponseDto;
+import com.rohit.springjpademo.dto.profile.ProfileRequestDto;
+import com.rohit.springjpademo.dto.profile.ProfileUserResponseDto;
 import com.rohit.springjpademo.entity.onetoone.Profile;
 import com.rohit.springjpademo.entity.onetoone.User;
 import com.rohit.springjpademo.mapper.ProfileMapper;
-import com.rohit.springjpademo.repo.onetoone.ProfileRepository;
-import com.rohit.springjpademo.repo.onetoone.UserRepository;
+import com.rohit.springjpademo.repo.ProfileRepository;
+import com.rohit.springjpademo.repo.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

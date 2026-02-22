@@ -1,6 +1,7 @@
 package com.rohit.springjpademo.mapper;
 
-import com.rohit.springjpademo.dto.*;
+import com.rohit.springjpademo.dto.product.ProductRequestDto;
+import com.rohit.springjpademo.dto.product.ProductResponseDto;
 import com.rohit.springjpademo.entity.Product;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.rohit.springjpademo.dto;
+package com.rohit.springjpademo.dto.user;
 
 import com.rohit.springjpademo.entity.onetoone.Profile;
 

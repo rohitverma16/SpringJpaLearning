@@ -1,9 +1,12 @@
 package com.rohit.springjpademo.mapper;
 
-import com.rohit.springjpademo.dto.ProfileRequestDto;
-import com.rohit.springjpademo.dto.ProfileUserResponseDto;
-import com.rohit.springjpademo.dto.UserDto;
-import com.rohit.springjpademo.dto.UserprofileRequestDto;
+import com.rohit.springjpademo.dto.family.FamilyRequestDto;
+import com.rohit.springjpademo.dto.family.FamilyResponseDto;
+import com.rohit.springjpademo.dto.profile.ProfileRequestDto;
+import com.rohit.springjpademo.dto.profile.ProfileUserResponseDto;
+import com.rohit.springjpademo.dto.user.UserDto;
+import com.rohit.springjpademo.dto.user.UserprofileRequestDto;
+import com.rohit.springjpademo.entity.onetomany.Family;
 import com.rohit.springjpademo.entity.onetoone.Profile;
 import com.rohit.springjpademo.entity.onetoone.User;
 import org.springframework.stereotype.Component;
@@ -16,6 +19,13 @@ public class ProfileMapper {
           profile.setEmail(profileRequestDto.email());
           profile.setPhone(profileRequestDto.phone());
           return profile;
+    }
+
+    public Family toEntity(FamilyRequestDto familyRequestDto) {
+        Family family=new Family();
+        family.setFamilyEmail(familyRequestDto.familyEmail());
+        family.setFamilyName(familyRequestDto.familyName());
+        return family;
     }
 
     public User toEntity(UserprofileRequestDto userprofileRequestDto) {
@@ -50,5 +60,15 @@ public class ProfileMapper {
     public UserDto toDto(User user) {
         if(user==null) return null;
         return new UserDto(user.getId(), user.getUsername(), user.getStatus());
+    }
+
+    public FamilyResponseDto toDto(Family family) {
+        if(family==null) return null;
+        return new FamilyResponseDto(
+                family.getUser().getUsername(),
+                family.getFamilyId(),
+                family.getFamilyName(),
+                family.getFamilyEmail()
+        );
     }
 }

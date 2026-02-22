@@ -1,7 +1,7 @@
 package com.rohit.springjpademo.controller;
 
-import com.rohit.springjpademo.dto.ProfileRequestDto;
-import com.rohit.springjpademo.dto.ProfileUserResponseDto;
+import com.rohit.springjpademo.dto.profile.ProfileRequestDto;
+import com.rohit.springjpademo.dto.profile.ProfileUserResponseDto;
 import com.rohit.springjpademo.entity.onetoone.Profile;
 import com.rohit.springjpademo.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;

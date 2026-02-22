@@ -1,9 +1,9 @@
 package com.rohit.springjpademo.service;
 
-import com.rohit.springjpademo.dto.UserprofileRequestDto;
+import com.rohit.springjpademo.dto.user.UserprofileRequestDto;
 import com.rohit.springjpademo.entity.onetoone.User;
 import com.rohit.springjpademo.mapper.ProfileMapper;
-import com.rohit.springjpademo.repo.onetoone.UserRepository;
+import com.rohit.springjpademo.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

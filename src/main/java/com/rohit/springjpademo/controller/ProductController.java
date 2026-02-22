@@ -1,7 +1,7 @@
 package com.rohit.springjpademo.controller;
 
-import com.rohit.springjpademo.dto.ProductRequestDto;
-import com.rohit.springjpademo.dto.ProductResponseDto;
+import com.rohit.springjpademo.dto.product.ProductRequestDto;
+import com.rohit.springjpademo.dto.product.ProductResponseDto;
 import com.rohit.springjpademo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
