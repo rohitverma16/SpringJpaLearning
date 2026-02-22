@@ -12,13 +12,18 @@ public class User {
     private String username;
     private Boolean status;
 
+    //for bi-directional mapping
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
+
     public User() {
     }
 
-    public User(Long id, String username, Boolean status) {
+    public User(Long id, String username, Boolean status, Profile profile) {
         this.id = id;
         this.username = username;
         this.status = status;
+        this.profile = profile;
     }
 
     public Long getId() {
@@ -43,5 +48,13 @@ public class User {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 }

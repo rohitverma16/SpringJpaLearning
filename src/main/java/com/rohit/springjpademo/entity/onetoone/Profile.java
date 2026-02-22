@@ -1,5 +1,6 @@
 package com.rohit.springjpademo.entity.onetoone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,7 @@ public class Profile {
 
     @OneToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore  // prevents infinite recursion when serializing Profile → User → Profile
     private User user;
 
     public Profile() {

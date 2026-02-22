@@ -1,6 +1,7 @@
 package com.rohit.springjpademo.controller;
 
 import com.rohit.springjpademo.dto.ProfileRequestDto;
+import com.rohit.springjpademo.dto.ProfileUserResponseDto;
 import com.rohit.springjpademo.entity.onetoone.Profile;
 import com.rohit.springjpademo.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +25,17 @@ public class ProfileController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Profile>> fetchAllProfiles() {
-        List<Profile> profiles = profileService.fetchAll();
-        return ResponseEntity.ok(profiles);
+    public ResponseEntity<List<ProfileUserResponseDto>> fetchAllProfiles() {
+        List<ProfileUserResponseDto> profileUserResponseDto = profileService.fetchAll();
+        return ResponseEntity.ok(profileUserResponseDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Profile> fetchProfile(@PathVariable Long id) {
-        Profile profile=profileService.fetchProfileById(id);
-        if(profile==null) {
+    public ResponseEntity<ProfileUserResponseDto> fetchProfile(@PathVariable Long id) {
+        ProfileUserResponseDto profileUserResponseDto=profileService.fetchProfileById(id);
+        if(profileUserResponseDto==null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(profile);
+        return ResponseEntity.ok(profileUserResponseDto);
     }
 }

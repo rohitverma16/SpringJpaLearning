@@ -1,5 +1,6 @@
 package com.rohit.springjpademo.controller;
 
+import com.rohit.springjpademo.dto.UserprofileRequestDto;
 import com.rohit.springjpademo.entity.onetoone.User;
 import com.rohit.springjpademo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class UserController {
     private UserService userService;
 
 
+    //for unidirectional
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User userSaved = userService.createUser(user);
@@ -38,5 +40,11 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    //for bidirectional
+    @PostMapping("/profile")
+    public ResponseEntity<User> createUserProfile(@RequestBody UserprofileRequestDto  userprofileRequestDto) {
+        User user = userService.createUser(userprofileRequestDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
 
 }
