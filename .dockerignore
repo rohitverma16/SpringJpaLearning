@@ -1,7 +1,5 @@
 target
 !target/spring-jpa-demo.jar
 .git
-mvnw
-.mvn
 *.md
 Dockerfile
